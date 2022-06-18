@@ -8,9 +8,9 @@ So that's why this script was created, to automate installation of applications 
 
 ## How to use it:
 
-Edit `backup.json` file and add applications and buckets you want `import.ps1` script to install. These can be just application you want installed like `discord` or you can define bucket from which application should be installed like `extras/discord`.
+Edit `backup.json` file and add applications and buckets you want `install.ps1` script to install. These can be just application you want installed like `discord` or you can define bucket from which application should be installed like `extras/discord`.
 
 For buckets you need to provide bucket name and bucket source, one line string separated by space. For "known" Buckets you can provide just the name of the Bucket you want to add and Scoop already knows the source. It works either way.
 
-If you want to backup installed applications and buckets, you can run `export.ps1` and it will generate `backup.json` file with applications and buckets installed on your system.
-You can then use `import.ps1` to install these. Take note that `export.ps1` will overwrite existing `backup.json` file.
+If you want to backup installed applications and buckets, you can run `backup.ps1` and it will generate `backup.json` file with applications and buckets installed on your system.
+You can then use `install.ps1` to install these. Take note that `backup.ps1` will overwrite existing `backup.json` file.
