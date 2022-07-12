@@ -2,7 +2,7 @@
 $data = Get-Content backup.json -Raw | ConvertFrom-Json 
 
 # We need these two to add buckets and unpack apps 
-scoop install git 7zip
+scoop install 7zip git
 
 # Loop through bucket's list and add them
 foreach ($bucket in $data.buckets) {
