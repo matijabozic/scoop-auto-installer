@@ -12,7 +12,7 @@ foreach ($app in $apps) {
 # Populate $data with buckets
 $buckets = scoop bucket list
 foreach ($bucket in $buckets) {
-  $data["buckets"] += $bucket.Name + ' ' + $bucket.Source
+  $data["buckets"] += $bucket.Name + " " + $bucket.Source
 }
 
 # Output file as JSON
