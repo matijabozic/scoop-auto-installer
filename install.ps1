@@ -4,7 +4,7 @@ $data = Get-Content backup.json -Raw | ConvertFrom-Json
 # We need these two to add buckets and unpack apps 
 scoop install 7zip git
 
-# Loop through bucket's list and add them
+# Loop through bucket's, list and then add them
 foreach ($bucket in $data.buckets) {
   if ($bucket -match " ") {
     $bucket = $bucket.split(" ")
@@ -15,15 +15,15 @@ foreach ($bucket in $data.buckets) {
   }
 }
 
-# Updated buckets
+# Updated scoop
 scoop update
 
-# Loop through application's list and install them
-foreach ($app in $data.applications) {
+# Loop through application's list and install each application
+foreach ($app in $data.apps) {
   scoop install $app
 }
 
-# Update all applications in case some of them were already installed
-scoop update *
+# Check status of scoop apps
+scoop status
 
 Read-Host -Prompt "Done, press Enter to exit!"
