@@ -1,12 +1,12 @@
 # Placeholder for buckets and applications
 $data = @{}
 $data["buckets"] = @()
-$data["apps"] = @()
+$data["applications"] = @()
 
 # Populate $data with applications
 $apps = scoop list 
 foreach ($app in $apps) {
-  $data["apps"] += $app.Source + "/" + $app.Name
+  $data["applications"] += $app.Source + "/" + $app.Name
 }
 
 # Populate $data with buckets
