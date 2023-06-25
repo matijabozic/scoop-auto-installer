@@ -1,7 +1,7 @@
 # Fetch backup.json
 $data = Get-Content backup.json -Raw | ConvertFrom-Json 
 
-# We need these git and 7zip to add buckets and unpack apps 
+# We need git and 7zip to add buckets and unpack apps 
 scoop install 7zip git
 
 # Loop through bucket's list and add them
@@ -15,10 +15,7 @@ foreach ($bucket in $data.buckets) {
   }
 }
 
-# Updated buckets
-scoop update
-
-# Loop through application's list and install them
+# Loop through applications list and install them
 foreach ($app in $data.apps) {
   scoop install $app
 }
